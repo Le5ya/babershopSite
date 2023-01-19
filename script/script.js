@@ -14,7 +14,7 @@ const startSlider = () => {
  let position = 0;
  
  const checkSlider = () => {
-  if ((activeSlider + 2 === sliderItems.length &&
+  if ((activeSlide + 2 === sliderItems.length &&
     document.documentElement.offsetWidth > 560) ||
     activeSlide === sliderItems.length) {
     btnNextSlide.style.display = 'none';
@@ -33,25 +33,25 @@ const startSlider = () => {
 
 const nextSlide = () => {
   sliderItems[activeSlide]?.classList.remove('slider__item_active');
-  position = -sliderItem[0].clientWidth * activeSlide;
+  position = -sliderItems[0].clientWidth * activeSlide;
 
   sliderList.style.transform = `translateX(${position}px)`;
-  activSlide += 1;
+  activeSlide += 1;
   sliderItems[activeSlide]?.classList.add('slider__item_active');
   checkSlider();
 };
 const prevSlide = () => {
   sliderItems[activeSlide]?.classList.remove('slider__item_active');
-  position = -sliderItem[0].clientWidth * (activeSlide - 2);
+  position = -sliderItems[0].clientWidth * (activeSlide - 2);
 
   sliderList.style.transform = `translateX(${position}px)`;
-  activSlide -= 1;
+  activeSlide -= 1;
   sliderItems[activeSlide]?.classList.add('slider__item_active');
   checkSlider();
 };
 
-btnPrevSlide.addEventListener('click', PrevSlide);
-btnNextSlide.addEventListener('click', NextSlide);
+btnPrevSlide.addEventListener('click', prevSlide);
+btnNextSlide.addEventListener('click', nextSlide);
 
 window.addEventListener('resize', () => {
   if (activeSlide + 2 > sliderItems.length && 
