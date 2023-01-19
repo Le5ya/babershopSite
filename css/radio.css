@@ -11,6 +11,7 @@
   line-height: 1;
   text-transform: uppercase;
   border: 1px solid #bfbdb2;
+  border-radius: 36px;
   cursor: pointer;
 }
 .radio__label:hover {
