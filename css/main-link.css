@@ -8,6 +8,7 @@
   text-decoration: none;
   color: #241d1c;
   background: #f6f3e3;
+  border: none;
   cursor: pointer;
 }
 .main-link:hover:not(:disabled) {
