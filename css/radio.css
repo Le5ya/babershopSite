@@ -15,13 +15,16 @@
   cursor: pointer;
   
 }
-.radio__label:hover {
+.radio__label:hover:not(:disabled) {
   color: #efe7be;
 }
-.radio__label:focus + .radio__label,
-.radio__label:checked + .radio__label {
+.radio__input:focus + .radio__label,
+.radio__input:checked + .radio__label {
   color: #241d1c;
   background: #f6f3e3;
+}
+.radio__input:disabled + .radio__label {
+  opacity: 0.3;
 }
 .radio__label_spec {
   padding-left: 52px;
